@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15" version="27.0.3">
+  <diagram id="XZl-SP0hIauo-jaiqa5Z" name="page-1">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="45" as="targetPoint" />
+            <mxPoint x="120" y="45" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-4" value="Оплата за&lt;div&gt;медицинские услуги&lt;/div&gt;&lt;div&gt;и анализы&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="WIj46eqOjLU1ObrtdJFz-3">
+          <mxGeometry x="-0.2286" y="-5" relative="1" as="geometry">
+            <mxPoint x="10" y="-29" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-10" value="Пациент" style="verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#A153A0;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0,0.5,0],[0.125,0.25,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[0.875,0.25,0],[1,0.5,0],[0.875,0.75,0],[0.75,1,0],[0.5,1,0],[0.125,0.75,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.design.user;" vertex="1" parent="1">
+          <mxGeometry x="50" y="15" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-14" value="Взять оплату у пациента&lt;div&gt;и пробить чек&lt;/div&gt;" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="1" target="WIj46eqOjLU1ObrtdJFz-22">
+          <mxGeometry x="-0.0805" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="-5" />
+            </Array>
+            <mxPoint as="offset" />
+            <mxPoint x="330" y="40" as="sourcePoint" />
+            <mxPoint x="570" y="-40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-18" value="Кассир" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Support_2.svg;" vertex="1" parent="1">
+          <mxGeometry x="280" y="15" width="32" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="1" source="WIj46eqOjLU1ObrtdJFz-22" target="WIj46eqOjLU1ObrtdJFz-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-21" value="Информация о&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;принятии&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;денежных&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;средств&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="WIj46eqOjLU1ObrtdJFz-20">
+          <mxGeometry x="-0.25" y="3" relative="1" as="geometry">
+            <mxPoint x="-3" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-22" value="&lt;div&gt;Контрольно-кассовая машина&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="591" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="1" source="WIj46eqOjLU1ObrtdJFz-25" target="WIj46eqOjLU1ObrtdJFz-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-24" value="Обновление платежных&amp;nbsp;&lt;div&gt;файлов&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;пациента&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="WIj46eqOjLU1ObrtdJFz-23">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-25" value="1C Бухгалтерия предприятия" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="591" y="154" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-26" value="Файлы пациента в разных форматах" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="591" y="289" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-27" value="Процессинг платежей" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="1">
+          <mxGeometry x="-0.0805" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="139" />
+            </Array>
+            <mxPoint as="offset" />
+            <mxPoint x="330" y="184" as="sourcePoint" />
+            <mxPoint x="591" y="184" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIj46eqOjLU1ObrtdJFz-28" value="Бухгалтер" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Support_2.svg;" vertex="1" parent="1">
+          <mxGeometry x="280" y="159" width="32" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
