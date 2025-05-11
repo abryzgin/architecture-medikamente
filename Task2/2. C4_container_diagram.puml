@@ -1,0 +1,77 @@
+@startuml ToBeContainerDiagram
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+'=== Персоны и внешние системы ===
+Person(client, "Пациент", "Использует мобильное или веб‑приложение")
+Person(staff, "Сотрудник", "Медицинский и административный персонал")
+Person(securityAdmin, "Администратор ИБ", "Сотрудник SOC / отдела информационной безопасности")
+System_Ext(labSystem, "Лабораторная система", "Внешний API лаборатории")
+System_Ext(bankSystem, "Платёжный провайдер", "Внешний процессинг платежей")
+
+'=== Граница MVP «Медикаменте» ===
+System_Boundary(mvp, "MVP «Медикаменте»") {
+  Container(gateway, "Шлюз API", "Обрабатывает все запросы, применяет аутентификацию, авторизацию, ограничение частоты", "API Gateway")
+  Container(auth, "Сервис аутентификации", "OAuth2/JWT, RBAC/ABAC", "Spring Boot")
+  Container(clientApp, "Портал пациента", "Веб‑/мобильный портал для записи и управления приёмами", "React / Flutter")
+  Container(staffApp, "Портал сотрудников", "Веб‑портал ресепшена и персонала для работы с приёмами и пациентами", "React")
+  Container(crm, "Сервис CRM", "Управляет профилями пациентов, приёмами, согласиями, расчётами", "Spring Boot Microservice")
+  Container(labIntegration, "Сервис интеграции с лабораторией", "Обменивается заказами и результатами анализов по защищённому API‑контракту", "Java Microservice")
+  Container(paymentGateway, "Платёжный шлюз", "Обрабатывает платежи и взаимодействует с платёжным провайдером", "Node.js / Spring Boot")
+  ContainerDb(db, "База данных CRM", "PostgreSQL (TDE, AES‑256)", "Реляционная БД")
+  Container(datas3, "Объектное хранилище", "MinIO (шифрование SSE‑S3)", "Object Storage")
+  Container(messageBus, "Шина сообщений", "Kafka для асинхронных событий, нотификаций и интеграций", "Apache Kafka")
+  Container(siem, "SIEM (аудит + мониторинг)", "Wazuh + ELK", "Неизменяемые журналы, корреляция, оповещения")
+  Container(vault, "Управление секретами (Vault)", "Хранит и ротирует ключи шифрования, сертификаты и секреты", "HashiCorp Vault")
+}
+
+'=== Связи ===
+client --> clientApp : "Использует (HTTPS TLS)"
+staff --> staffApp : "Использует (HTTPS TLS)"
+clientApp --> gateway : "REST API (HTTPS TLS)"
+staffApp --> gateway : "REST API (HTTPS TLS)"
+gateway --> auth : "Проверка JWT, RBAC/ABAC"
+gateway --> crm : "API: пациенты/приёмы"
+gateway --> labIntegration : "API: лаборатория"
+gateway --> paymentGateway : "API: платежи"
+crm --> db : "Чтение/запись (шифр.)"
+crm --> datas3 : "Хранение документов"
+labIntegration --> labSystem : "HTTPS mTLS"
+paymentGateway --> bankSystem : "HTTPS TLS"
+crm --> messageBus : "События: appointment.created, consent.changed"
+paymentGateway --> messageBus : "События: payment.completed"
+messageBus --> siem : "Журналы событий"
+crm --> siem : "аудит"
+gateway --> siem : "WAF / access‑логи"
+siem --> securityAdmin : "Оповещения + доступ read‑only"
+auth --> vault : "Ключи / подпись JWT"
+gateway ..> vault : "TLS‑сертификаты и конфигурация"
+
+'=== Комментарии о приватности данных ===
+/'
+Хранение данных:
+- Персональные и медицинские данные хранятся в PostgreSQL с Transparent Data Encryption (AES‑256).
+- Документы (сканы, согласия, результаты) хранятся в MinIO с шифрованием SSE‑S3.
+- Все ключи шифрования и секреты централизованно управляются HashiCorp Vault.
+
+Сроки хранения и уничтожения:
+- Персональные данные хранятся 5 лет после последнего обращения пациента, затем автоматически удаляются.
+- Записи согласий хранятся 3 года после отзыва или последнего использования с версионированием.
+- Ежедневные задания выполняют безопасное удаление и зачистку ключей.
+
+Защита данных в транзите:
+- Все сервисы используют TLS 1.3 (mTLS для внешних API).
+- Шлюз API применяет JWT и политики RBAC/ABAC.
+- Реализованы WAF, лимитирование, IP‑allow‑list.
+
+Защита данных на покое:
+- Шифрование БД и хранилища (LUKS, SSE).
+- Регулярная ротация ключей (Vault) и аудит.
+- SIEM хранит журналы в неизменяемых индексах (WORM).
+
+Мониторинг и аудит:
+- SIEM объединяет функции аудита и мониторинга; алерты отправляются только администратору ИБ.
+- Wazuh анализирует логи в реальном времени, коррелирует события и формирует оповещения.
+- Политика хранения логов: 1 год «горячий» индекс, 3 года «холодный» S3, далее удаление.
+'/
+
+@enduml

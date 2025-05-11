@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15" version="27.0.3">
+  <diagram id="pcu_YvXfQji6okV63Js-" name="page-1">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IqTOkSvkWIoUFYYop8LN-21" value="Работник&lt;div&gt;Медикаменте&lt;/div&gt;" style="verticalLabelPosition=bottom;sketch=0;html=1;fillColor=#A153A0;strokeColor=#ffffff;verticalAlign=top;align=center;points=[[0,0.5,0],[0.125,0.25,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[0.875,0.25,0],[1,0.5,0],[0.875,0.75,0],[0.75,1,0],[0.5,1,0],[0.125,0.75,0]];pointerEvents=1;shape=mxgraph.cisco_safe.compositeIcon;bgIcon=ellipse;resIcon=mxgraph.cisco_safe.design.user;" vertex="1" parent="1">
+          <mxGeometry x="30" y="207" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IqTOkSvkWIoUFYYop8LN-33" value="Заполнение заявки&lt;div&gt;на расход ТМЦ и передача&lt;/div&gt;&lt;div&gt;ее работнику склада по&amp;nbsp;&lt;/div&gt;&lt;div&gt;электронной почте&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.125;entryY=0.48;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;" edge="1" parent="1" source="IqTOkSvkWIoUFYYop8LN-21" target="TpOy6LbKt_rIKxG-Y2w1-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="276" y="231.97800000000007" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-PocjyBf9sP-rAKDLq3T-4" value="Учет ТМЦ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="1" source="TpOy6LbKt_rIKxG-Y2w1-1" target="-PocjyBf9sP-rAKDLq3T-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TpOy6LbKt_rIKxG-Y2w1-1" value="Сотрудник&lt;div&gt;склада&lt;/div&gt;" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Support_2.svg;" vertex="1" parent="1">
+          <mxGeometry x="336" y="208" width="32" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-PocjyBf9sP-rAKDLq3T-3" value="Процессинг&lt;div&gt;платежей&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;flowAnimation=1;" edge="1" parent="1" source="TpOy6LbKt_rIKxG-Y2w1-2" target="-PocjyBf9sP-rAKDLq3T-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TpOy6LbKt_rIKxG-Y2w1-2" value="Бухгалтер" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Support_2.svg;" vertex="1" parent="1">
+          <mxGeometry x="336" y="35" width="32" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-PocjyBf9sP-rAKDLq3T-5" value="Внутриплатформенный&lt;div&gt;обмен данными&lt;/div&gt;&lt;div&gt;(OLE)&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;flowAnimation=1;" edge="1" parent="1" source="-PocjyBf9sP-rAKDLq3T-1" target="-PocjyBf9sP-rAKDLq3T-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="556" y="145" />
+              <mxPoint x="556" y="145" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-PocjyBf9sP-rAKDLq3T-1" value="1C Бухгалтерия предприятия" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="496" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-PocjyBf9sP-rAKDLq3T-2" value="1C Торговля и склад" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="496" y="203" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
